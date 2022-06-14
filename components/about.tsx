@@ -11,8 +11,8 @@ import ButtonMore from "./atoms/buttonMore";
 
 const About = () => {
     return (
-      <section className=" block font-serif md:flex lg:p-12 bg-teal-800 w-screen h-max">
-        <div id="formas" className=" w-screen h-max  md:flex">
+      <section className=" block font-serif md:flex lg:p-12 lg: bg-teal-800 w-screen h-max">
+        <div id="formas" className=" w-screen h-max lg:my-16  md:flex">
           <div className=" block w-screen md:w-1/2 h-auto mr-10">
             <FontAwesomeIcon
               icon={faPlay}

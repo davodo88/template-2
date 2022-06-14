@@ -4,6 +4,7 @@ import Contact from '../components/contact';
 import Hero from '../components/hero';
 import About from '../components/about';
 import Service1 from '../components/service1';
+import Service2 from '../components/service2';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <About />
       <Service1 />
+      <Service2 />
     </body>
     
     </>

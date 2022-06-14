@@ -8,7 +8,7 @@ import Slide from "./atoms/slide";
 const Service1 = () => {
     return (
       <section className="font-serif  block">
-        <section id="uno" className="block lg:flex">
+        <section id="uno" className="block lg:my-20 lg:flex">
           <div className="block h-max  lg:w-1/2 p-3  mt-10 ">
             <p className="flex text-xs justify-center lg:-ml-32 lg:mb-4 underline decoration-teal-500 underline-offset-2 text-teal-700 ">
               WHAT WE OFFER
@@ -28,7 +28,7 @@ const Service1 = () => {
             </span>
           </div>
         </section>
-        <section id="dos" className="flex">
+        <section id="dos" className="flex lg:my-20">
           <Slide />
         </section>
       </section>
