@@ -48,9 +48,9 @@ const Service2 = () => {
             </div>
             <div className="inline-block m-8 text-center md:text-left">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              incidunt, quae, voluptatem velit, 
-              repudiandae hic quas quo minima dolores accusantium quidem rem!
-              Accusantium quibusdam adipisci optio.
+              incidunt, quae, voluptatem velit, repudiandae hic quas quo minima
+              dolores accusantium quidem rem! Accusantium quibusdam adipisci
+              optio.
               <div className="inline-block md:flex p-2 mt-8 ">
                 <span className="block md:w-1/2 ">
                   <div className="flex text-2xl justify-center text-teal-700 mb-4 underline underline-offset-2 decoration-teal-700">
@@ -82,11 +82,15 @@ const Service2 = () => {
                 </span>
               </div>
             </div>
-            <div className="hidden md:flex relative">
-              <div className="absolute">therapy</div>
-              <div className="absolute">80%</div>
-              <div className="absolute">counselling</div>
-              <div className="absolute">29%</div>
+            <div className="hidden md:flex justify-around mb-12 ">
+              <div className="flex relative  w-44 h-14">
+                <div className="flex absolute text-left w-32 border-t-4 border-teal-400">Therapy</div>
+                <div className="flex absolute text-right justify-end w-44 border-t-2 border-teal-400">80%</div>
+              </div>
+              <div className="flex relative  w-44 h-14">
+                <div className="flex absolute border-t-4 w-32 border-teal-400">Counselling</div>
+                <div className="flex absolute justify-end w-44 border-t-2 border-teal-400">29%</div>
+              </div>
             </div>
             <ButtonMore />
           </div>

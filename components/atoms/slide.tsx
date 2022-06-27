@@ -1,107 +1,81 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight, faHandHoldingDroplet, faPrescriptionBottleMedical, faShoePrints, faSpa } from "@fortawesome/free-solid-svg-icons";
-import { Carousel } from "flowbite-react";
-
-import Image from "next/image";
-import Doctor from "/images/hero/doctor.png"
-
+import { useState } from 'react';
+import {classNames } from "../../utils/utils";
 
 
 const Slide = () => {
   
+    const cards = [
+      { text: "Read More", icon: faHandHoldingDroplet , tittle: "Phisical Therapy", bg: "light" },
+      { text: "Read More", icon: faPrescriptionBottleMedical , tittle: "Clinical Pilates", bg: "dark" },
+      { text: "Read More", icon: faShoePrints , tittle: "chiropractic Therapy", bg: "light" },
+      { text: "Read More", icon: faSpa , tittle: "Sport Injuries", bg: "dark" },
+      { text: "Read More", icon: faSpa , tittle: "Posture Corrector", bg: "light" },
+      { text: "Read More", icon: faSpa , tittle: "Sports Mentality", bg: "dark" },
+    ];
+  const [prev, setPrev] = useState(1);
+  const [next, setNext] = useState(4);
+  const [card, setCard] = useState(cards.slice(prev, next));
+
+  const handleNext = () => {
+    if (next < cards.length) {
+      setNext(next + 1);
+      setPrev(prev + 1);
+      const newArray = cards.slice(prev + 1, next + 1);
+      setCard(newArray);
+    }
+  };
+  const handlePrev = () => {
+    if (prev > 0) {
+      setNext(next - 1);
+      setPrev(prev - 1);
+      const newArray = cards.slice(prev - 1, next - 1);
+      setCard(newArray);
+    }
+  };
     return (
       <>
-        <div
-          className="grid grid-cols-2 grid-rows-2 gap-2 border-4 rounded-xl mx-auto border-teal-300  p-2 lg:relative md:flex my-10"
-          data-carousel="static"
-        >
-          
-            <div
-              className="block rounded-md text-center w-40 h-40 md:w-48 md:h-44 lg:w-72 lg:h-60 p-2 bg-teal-200  mx-auto  "
-              data-carousel-item
-            >
-              <span
-                className="flex w-12 h-12 mx-auto lg:mt-10 mt-2 lg:w-20 lg:h-20 p-1 lg:p-4
-                rounded-tl-[55%] rounded-tr-[75%] rounded-bl-[25%] rounded-br-[85%] text-white bg-gray-400/75"
+        <div className="flex justify-center border-2 border-black w-screen">
+          <button
+            onClick={handlePrev}
+            className="w-12 h-12 m-auto border-2 border-red-500"
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
+          {cards.map((cards, index) => {
+            return (
+              <div
+                key={index}
+                className={classNames(
+                  "flex justify-center w-36 h-36 rounded-md p-4",
+                  cards.bg === "light" ? "bg-teal-300" : "bg-teal-700"
+                )}
               >
-                <FontAwesomeIcon
-                  icon={faHandHoldingDroplet}
-                  className="h-10 w-10"
-                />
-              </span>
-              <span className=" block text-center lg:text-xl lg:mt-2 font-medium text-teal-900">
-                <span>Physical</span>
-                <br />
-                <span>Therapy</span>
-              </span>
-              <span className="text-xs font-thin underline text-black italic">
-                Read More
-              </span>
-            </div>
-            <div
-              className="block rounded-md text-center w-40 h-40 md:w-48 md:h-44 lg:w-72 lg:h-60 bg-teal-700 p-2  mx-auto "
-              data-carousel-item
-            >
-              <span
-                className="flex w-12 h-12 mx-auto lg:mt-10 mt-2 lg:w-20 lg:h-20 lg:p-4 p-1
-                rounded-tl-[55%] rounded-tr-[75%] rounded-bl-[25%] rounded-br-[85%] text-white bg-gray-300/75 "
-              >
-                <FontAwesomeIcon
-                  icon={faPrescriptionBottleMedical}
-                  className="h-10 w-10 "
-                />
-              </span>
-              <span className="block text-center lg:text-xl lg:mt-2 font-medium text-teal-200">
-                <span>Clinical</span>
-                <br />
-                <span>Pilates</span>
-              </span>
-              <span className="text-xs font-thin underline text-teal-200 italic">
-                Read More
-              </span>
-            </div>
-            <div
-              className="block rounded-md text-center w-40 h-40 md:w-48 md:h-44 lg:w-72 lg:h-60 p-2 bg-teal-200  mx-auto "
-              data-carousel-item
-            >
-              <span
-                className="flex w-12 h-12 mx-auto mt-2 lg:mt-10 lg:w-20 lg:h-20 p-1 lg:p-4
-                rounded-tl-[55%] rounded-tr-[75%] rounded-bl-[25%] rounded-br-[85%] text-white bg-gray-400/75 "
-              >
-                <FontAwesomeIcon icon={faSpa} className="h-10 w-10" />
-              </span>
-              <span className="block text-center lg:text-xl lg:mt-2 font-medium text-teal-900">
-                <span>Chiropratic</span>
-                <br />
-                <span>Therapy</span>
-              </span>
-              <span className="text-xs font-thin underline text-black italic">
-                Read More
-              </span>
-            </div>
-            <div
-              className="block rounded-md text-center w-40 h-40 md:w-48 md:h-44 lg:w-72 lg:h-60 p-2  bg-teal-700 mx-auto  "
-              data-carousel-item
-            >
-              <span
-                className="flex  w-12 h-12 mx-auto mt-2 lg:mt-10 lg:w-20 lg:h-20 p-1 lg:p-4
-                rounded-tl-[55%] rounded-tr-[75%] rounded-bl-[25%] rounded-br-[85%] text-white bg-gray-300/75 "
-              >
-                <FontAwesomeIcon icon={faShoePrints} className="h-10 w-10" />
-              </span>
-              <span className="block text-center lg:text-xl lg:mt-2 font-medium text-teal-200">
-                <span>Sport</span>
-                <br />
-                <span>Injuries</span>
-              </span>
-              <span className="text-xs font-thin underline text-teal-200 italic">
-                Read More
-              </span>
-            </div>
-          
+                <FontAwesomeIcon icon={cards.icon} />
+                <span className=" block text-center lg:text-xl lg:mt-2 font-medium text-teal-900">
+                  <span>{cards.tittle.split(" ")[0]}</span>
+                  <br />
+                  <span>{cards.tittle.split(" ")[1]}</span>
+                </span>
+              </div>
+            );
+          })}
+          <button
+            onClick={handleNext}
+            className="w-12 h-12 m-auto border-2 border-red-500"
+          >
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
         </div>
       </>
     );
 };
 export default Slide;
+
+
+
+
+
+
