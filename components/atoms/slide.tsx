@@ -17,14 +17,14 @@ const Slide = () => {
     ];
   const [prev, setPrev] = useState(1);
   const [next, setNext] = useState(4);
-  const [card, setCard] = useState(cards.slice(prev, next));
-
+  const [newCards, setNewCards] = useState(cards.slice(prev, next));
+    
   const handleNext = () => {
     if (next < cards.length) {
       setNext(next + 1);
       setPrev(prev + 1);
       const newArray = cards.slice(prev + 1, next + 1);
-      setCard(newArray);
+      setNewCards(newArray);
     }
   };
   const handlePrev = () => {
@@ -32,7 +32,7 @@ const Slide = () => {
       setNext(next - 1);
       setPrev(prev - 1);
       const newArray = cards.slice(prev - 1, next - 1);
-      setCard(newArray);
+      setNewCards(newArray);
     }
   };
     return (
@@ -44,20 +44,20 @@ const Slide = () => {
           >
             <FontAwesomeIcon icon={faArrowLeft} />
           </button>
-          {cards.map((cards, index) => {
+          {newCards.map((card, index) => {
             return (
               <div
                 key={index}
                 className={classNames(
                   "flex justify-center w-36 h-36 rounded-md p-4",
-                  cards.bg === "light" ? "bg-teal-300" : "bg-teal-700"
+                  card.bg === "light" ? "bg-teal-300" : "bg-teal-700"
                 )}
               >
-                <FontAwesomeIcon icon={cards.icon} />
+                <FontAwesomeIcon icon={card.icon} />
                 <span className=" block text-center lg:text-xl lg:mt-2 font-medium text-teal-900">
-                  <span>{cards.tittle.split(" ")[0]}</span>
+                  <span>{card.tittle.split(" ")[0]}</span>
                   <br />
-                  <span>{cards.tittle.split(" ")[1]}</span>
+                  <span>{card.tittle.split(" ")[1]}</span>
                 </span>
               </div>
             );
