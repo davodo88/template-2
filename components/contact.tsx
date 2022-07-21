@@ -9,7 +9,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 const Contact = () => {
     return (
       <>
-        <div className="block font-serif w-screen md:flex justify-between md:border-b-2 border-b-teal-400">
+        <div id="contact" className="block font-serif w-screen md:flex justify-between md:border-b-2 border-b-teal-400">
           <div className=" hidden lg:flex lg:flex-col lg:justify-center  ml-10 my-5 ">
             <div className="w-24 h-24">
               <Image src={Logo} height={""} width={""} alt="Logo" />

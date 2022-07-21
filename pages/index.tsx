@@ -1,11 +1,15 @@
 import react from 'react'
+import Head from 'next/head';
 import Navbar from '../components/navbar';
 import Contact from '../components/contact';
 import Hero from '../components/hero';
 import About from '../components/about';
 import Service1 from '../components/service1';
-import Service2 from '../components/service2';
+import WhoWeAre from '../components/whoWeAre';
 import ChooseUs from '../components/chooseUs';
+import FooterInfo from '../components/footerInfo';
+
+
 
 export default function Home() {
   return (
@@ -18,9 +22,12 @@ export default function Home() {
       <Hero />
       <About />
       <Service1 />
-      <Service2 />
+      <WhoWeAre />
       <ChooseUs />
     </body>
+    <footer>
+      <FooterInfo />
+    </footer>
     
     </>
   );

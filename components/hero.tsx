@@ -11,7 +11,7 @@ import Doctor from '../images/hero/doctor.png'
 const Hero = () => {
     return (
       <>
-        <section className="w-screen font-serif block justify-around  md:flex md:my-40 gap-5 my-10 ">
+        <section id="hero" className="w-screen font-serif inline-block lg:justify-around  md:flex md:my-40 gap-5 my-10 ">
           <div className="block md:ml-12 md:mt-6">
             <div
               className="block  text-xs text-center md:text-base lg:text-lg
@@ -39,7 +39,7 @@ const Hero = () => {
               <span>Watch Our Video</span>
             </div>
           </div>
-          <div className="block h-96 p-2  md:w-1/2 ">
+          <div className="block h-96 p-2 md:w-1/3 relative ">
             <div
               className="absolute flex z-10 h-52 w-56 mt-11 ml-14
                 lg:h-72 lg:w-64 lg:mt-2 lg:ml-36   
@@ -56,7 +56,7 @@ const Hero = () => {
             <div
               className="absolute  z-20 mt-20 ml-32  w-28 h-32
                 md:h-36 md:w-36
-                lg:w-56 lg:h-64 lg:ml-48 lg:mt-6 "
+                lg:w-56 lg:h-64 lg:mx-48 lg:mt-6 "
             >
               <Image src={Doctor} width={""} height={""} alt="Doctor" />
             </div>

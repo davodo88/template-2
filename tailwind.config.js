@@ -9,7 +9,8 @@
 
   theme: {
     fontFamily : {
-        serif: ['Italiana', 'serif'] 
+      PT : ['PT Serif', 'serif'] , 
+      Gothic : ['Nanum Gothic', 'sans-serif']
     },
     extend: {},
   },
