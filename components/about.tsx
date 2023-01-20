@@ -12,7 +12,7 @@ import ButtonMore from "./atoms/buttonMore";
 const About = () => {
     return (
       <section className=" block font-serif md:flex lg:p-12 lg: bg-teal-800 w-screen h-max">
-        <div id="formas" className=" w-screen h-max lg:my-16  md:flex">
+        <div className=" w-screen h-max lg:my-16  md:flex">
           <div className=" block w-screen md:w-1/2 h-auto mr-10">
             <FontAwesomeIcon
               icon={faPlay}
@@ -43,7 +43,10 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className=" inline-block  text-center md:text-left gap-3 p-5 md:w-1/2 ">
+          <div
+            id="formas"
+            className=" inline-block  text-center md:text-left gap-3 p-5 md:w-1/2 "
+          >
             <h1 className="lg:flex text-teal-200 underline lg:mx-auto lg:justify-center decoration-teal-200">
               ABOUT US
             </h1>

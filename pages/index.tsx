@@ -1,5 +1,4 @@
-import react from 'react'
-import Head from 'next/head';
+
 import Navbar from '../components/navbar';
 import Contact from '../components/contact';
 import Hero from '../components/hero';

@@ -10,13 +10,13 @@ html {
     background-image: url("../images/logoLoto.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
     
     
 }
 @media only screen and (min-width : 980px) {
     #formas{
-        background-position: right;
+        background-position: center;
         
     }
 }
